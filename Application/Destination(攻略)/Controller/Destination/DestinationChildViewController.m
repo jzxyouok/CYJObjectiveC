@@ -32,10 +32,10 @@
     _dataSource = [[NSMutableArray alloc]initWithCapacity:0];
     
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc]init];
-    flowLayout.minimumLineSpacing = 5;
-    flowLayout.minimumInteritemSpacing = 10;
+    flowLayout.minimumLineSpacing = 10;
+    flowLayout.minimumInteritemSpacing = 0;
     flowLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
-    flowLayout.itemSize = CGSizeMake(WIDTH(self.view) / 2 - 10, (WIDTH(self.view) / 2 - 10) * 1.38);
+    flowLayout.itemSize = CGSizeMake(WIDTH(self.view) / 2 - 15, (WIDTH(self.view) / 2 - 15) * 1.38);
     
     _collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, WIDTH(self.view), HEIGHT(self.view)) collectionViewLayout:flowLayout];
     [self.view addSubview:_collectionView];
@@ -110,10 +110,6 @@
                 break;
         }
     }
-    else if ([self.title isEqualToString:@"附近"])
-    {
-        return 0;
-    }
     return 0;
 }
 
@@ -152,10 +148,6 @@
                 break;
         }
     }
-    else if ([self.title isEqualToString:@"附近"])
-    {
-        
-    }
     return cell;
 }
 
@@ -168,10 +160,6 @@
     else if ([self.title isEqualToString:@"国内"])
     {
         return 2;
-    }
-    else if ([self.title isEqualToString:@"附近"])
-    {
-        return 1;
     }
     return 1;
 }
@@ -210,16 +198,12 @@
                 break;
         }
     }
-    else if ([self.title isEqualToString:@"附近"])
-    {
-        NSLog(@"附近");
-    }
 }
 
 #pragma mark - CollectionViewDelegateFlowLayout
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
 {
-    return UIEdgeInsetsMake(10, 5, 10, 5);
+    return UIEdgeInsetsMake(10, 10, 0, 10);
 }
 
 - (void) setUpWhenViewWillAppearForTitle:(NSString *)title forIndex:(NSInteger)index firstTimeAppear:(BOOL)isFirstTime
@@ -235,10 +219,6 @@
         {
             self.title = @"国内";
             [self setNetWorking];
-        }
-        else if ([title isEqualToString:@"附近"])
-        {
-            self.title = @"附近";
         }
     }
 }

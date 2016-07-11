@@ -8,7 +8,7 @@
 
 #import "DestinationCollectionViewCell.h"
 #import "DestinationModel.h"
-#import "UIImageView+WebCache.h"
+#import "YYWebImage.h"
 
 @interface DestinationCollectionViewCell ()
 
@@ -29,7 +29,8 @@
 #pragma mark - Load
 - (void) reloadCellWithModel:(Destinations *)model
 {
-    [_imageView sd_setImageWithURL:[NSURL URLWithString:model.image_url]];
+//    [_imageView sd_setImageWithURL:[NSURL URLWithString:model.image_url]];
+    [_imageView yy_setImageWithURL:[NSURL URLWithString:model.image_url] options:YYWebImageOptionSetImageWithFadeAnimation];
     
     _nameZhLabel.text = model.name_zh_cn;
     _nameEnLabel.text = model.name_en;

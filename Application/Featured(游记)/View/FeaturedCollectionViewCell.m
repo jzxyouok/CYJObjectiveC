@@ -7,7 +7,7 @@
 //
 
 #import "FeaturedCollectionViewCell.h"
-#import "UIImageView+WebCache.h"
+#import "YYWebImage.h"
 #import "FeaturedModel.h"
 
 #import "Define.h"
@@ -32,7 +32,8 @@
 #pragma mark - load
 - (void) reloadCellWithModel:(FeaturedModel *)model
 {
-    [_photeImageView sd_setImageWithURL:[NSURL URLWithString:model.front_cover_photo_url]];
+//    [_photeImageView sd_setImageWithURL:[NSURL URLWithString:model.front_cover_photo_url]];
+    [_photeImageView yy_setImageWithURL:[NSURL URLWithString:model.front_cover_photo_url] options:YYWebImageOptionSetImageWithFadeAnimation];
     
     if (!model.featured)
     {
@@ -42,9 +43,11 @@
     else
     {
         _flagBestImageView.hidden = NO;
+        self.flagLeading.constant = 8;
     }
     
-    [_userImageView sd_setImageWithURL:[NSURL URLWithString:model.user.image]];
+//    [_userImageView sd_setImageWithURL:[NSURL URLWithString:model.user.image]];
+    [_userImageView yy_setImageWithURL:[NSURL URLWithString:model.user.image] options:YYWebImageOptionSetImageWithFadeAnimation];
     
     _nameLabel.text = model.name;
     

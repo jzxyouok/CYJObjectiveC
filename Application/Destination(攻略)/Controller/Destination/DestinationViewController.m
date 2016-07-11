@@ -43,16 +43,15 @@
 {
     DestinationChildViewController *childViewController1 = [[DestinationChildViewController alloc] init];
     DestinationChildViewController *childViewController2 = [[DestinationChildViewController alloc] init];
-    DestinationChildViewController *childViewController3 = [[DestinationChildViewController alloc] init];
     
-    NSArray *array = [NSArray arrayWithObjects:childViewController1, childViewController2, childViewController3, nil];
+    NSArray *array = [NSArray arrayWithObjects:childViewController1, childViewController2, nil];
     return array;
 }
 
 #pragma mark - setup segmentView
 - (void) setupSegmentView
 {
-    self.titles = @[@"国外", @"国内", @"附近"];
+    self.titles = @[@"国外", @"国内"];
     
     ZJSegmentStyle *style = [[ZJSegmentStyle alloc]init];
     
