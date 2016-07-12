@@ -17,17 +17,27 @@
 #import "HYBNetworking.h"
 #import "MJRefresh.h"
 
+/**test**/
+#import "YYFPSLabel.h"
+
 @interface DestinationChildViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, ZJScrollPageViewChildVcDelegate>
 
 @property (strong, nonatomic) UICollectionView *collectionView;
 @property (strong, nonatomic) NSMutableArray *dataSource;
 
+/**test**/
+@property (nonatomic, strong) YYFPSLabel *fpsLabel;
+
 @end
 
 @implementation DestinationChildViewController
 #pragma mark - Life Circle
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
+    
+    /**test**/
+    [self testFPSLabel];
     
     _dataSource = [[NSMutableArray alloc]initWithCapacity:0];
     
@@ -206,6 +216,7 @@
     return UIEdgeInsetsMake(10, 10, 0, 10);
 }
 
+#pragma mark - ZJScrollPageViewChildVcDelegate
 - (void) setUpWhenViewWillAppearForTitle:(NSString *)title forIndex:(NSInteger)index firstTimeAppear:(BOOL)isFirstTime
 {
     if (isFirstTime)
@@ -221,6 +232,15 @@
             [self setNetWorking];
         }
     }
+}
+
+#pragma mark - Test
+- (void)testFPSLabel
+{
+    _fpsLabel = [YYFPSLabel new];
+    _fpsLabel.frame = CGRectMake(200, 200, 50, 30);
+    [_fpsLabel sizeToFit];
+    [self.navigationController.navigationBar addSubview:_fpsLabel];
 }
 
 @end

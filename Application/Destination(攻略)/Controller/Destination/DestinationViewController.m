@@ -22,7 +22,8 @@
 
 @implementation DestinationViewController
 #pragma mark - Life Circle
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     
     self.navigationItem.title = @"旅行攻略";
@@ -34,11 +35,7 @@
     [self setupContentView];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-}
-
-#pragma mark - setup childViewController
+#pragma mark - Setup ChildViewController
 - (NSArray *) setupChildViewController
 {
     DestinationChildViewController *childViewController1 = [[DestinationChildViewController alloc] init];
@@ -48,7 +45,7 @@
     return array;
 }
 
-#pragma mark - setup segmentView
+#pragma mark - Setup SegmentView
 - (void) setupSegmentView
 {
     self.titles = @[@"国外", @"国内"];
@@ -69,6 +66,7 @@
     style.selectedTitleColor = [UIColor colorWithRed:17 / 255.0 green:136 / 255.0 blue:219 / 255.0 alpha:1.0];
     
     __weak typeof(self) weakSelf = self;
+    
     ZJScrollSegmentView *segment = [[ZJScrollSegmentView alloc]initWithFrame:CGRectMake(10, 3, WIDTH(self.view) - 20, 34) segmentStyle:style titles:self.titles titleDidClick:^(UILabel *label, NSInteger index) {
         [weakSelf.contentView setContentOffSet:CGPointMake(weakSelf.contentView.bounds.size.width * index, 0) animated:YES];
     }];
@@ -79,14 +77,16 @@
     [self.view addSubview:_segmentView];
 }
 
-#pragma mark - setup contentView
-- (void)setupContentView {
+#pragma mark - Setup ContentView
+- (void)setupContentView
+{
     ZJContentView *content = [[ZJContentView alloc] initWithFrame:CGRectMake(0, 40, WIDTH(self.view), HEIGHT(self.view)) segmentView:self.segmentView parentViewController:self delegate:self];
     self.contentView = content;
     [self.view addSubview:self.contentView];
 }
 
-- (NSInteger)numberOfChildViewControllers {
+- (NSInteger)numberOfChildViewControllers
+{
     return self.titles.count;
 }
 

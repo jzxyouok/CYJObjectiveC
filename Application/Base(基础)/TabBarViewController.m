@@ -19,19 +19,16 @@
 @end
 
 @implementation TabBarViewController
-#pragma mark - life circle
-- (void)viewDidLoad {
+#pragma mark - Life Circle
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     
     [self setupTabBarViewController];
-    [self customizeInterface];
+    [self setupNavigationBarAppearance];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-}
-
-#pragma mark - setup tabBarViewController
+#pragma mark - Setup TabBarViewController
 - (void) setupTabBarViewController
 {
     FeaturedViewController *featuredViewController = [[FeaturedViewController alloc]init];
@@ -95,12 +92,8 @@
     self.tabBar.backgroundImage = [UIImage imageNamed:@"TabBarBackground"];
 }
 
-- (void) customizeInterface
-{
-    [self setUpNavigationBarAppearance];
-}
-
-- (void) setUpNavigationBarAppearance
+#pragma mark - Setup NavigationBarAppearance
+- (void) setupNavigationBarAppearance
 {
     UINavigationBar *navigationBarAppearance = [UINavigationBar appearance];
     

@@ -18,13 +18,21 @@
 #import "HYBNetworking.h"
 #import "MJRefresh.h"
 
+/**test**/
+#import "YYFPSLabel.h"
+
 @interface FeaturedChildViewController () <UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout, ZJScrollPageViewChildVcDelegate>
 
 @property (strong, nonatomic) UICollectionView *collectionView;
 @property (strong, nonatomic) NSMutableArray *dataSource;
 @property (assign, nonatomic) int page;
 
+/**test**/
+@property (nonatomic, strong) YYFPSLabel *fpsLabel;
+
 @end
+
+static NSString *kFeaturedCell = @"featuredCollectionViewCell";
 
 @implementation FeaturedChildViewController
 #pragma mark - Life Circle
@@ -32,13 +40,17 @@
 {
     [super viewDidLoad];
     
+    /**test**/
+    [self testFPSLabel];
+    
     _dataSource = [[NSMutableArray alloc]initWithCapacity:0];
     _page = 1;
     
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc]init];
     flowLayout.minimumLineSpacing = 5;
-    flowLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
+    flowLayout.sectionInset = UIEdgeInsetsMake(5, 0, 0, 0);
     flowLayout.itemSize = CGSizeMake(WIDTH(self.view), 0.6 * WIDTH(self.view));
+    flowLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
     
     _collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, WIDTH(self.view), HEIGHT(self.view)) collectionViewLayout:flowLayout];
     [self.view addSubview:_collectionView];
@@ -56,7 +68,7 @@
     }];
     
     UINib *featuredCollectionViewCell = [UINib nibWithNibName:@"FeaturedCollectionViewCell" bundle:nil];
-    [self.collectionView registerNib:featuredCollectionViewCell forCellWithReuseIdentifier:@"cell"];
+    [self.collectionView registerNib:featuredCollectionViewCell forCellWithReuseIdentifier:kFeaturedCell];
 }
 
 - (void)didReceiveMemoryWarning
@@ -64,7 +76,7 @@
     [super didReceiveMemoryWarning];
 }
 
-#pragma mark - Notification
+#pragma mark - Set NetWorking
 - (void) setNetWorking
 {
     NSString *urlString = [NSString stringWithFormat:kURLfeatured, _page];
@@ -102,7 +114,7 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    FeaturedCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
+    FeaturedCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kFeaturedCell forIndexPath:indexPath];
     
     if ([self.title isEqualToString:@"游记"])
     {
@@ -125,12 +137,7 @@
     NSLog(@"游记 %lu is select", indexPath.row);
 }
 
-#pragma mark - CollectionViewDelegateFlowLayout
-- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
-{
-    return UIEdgeInsetsMake(5, 0, 0, 0);
-}
-
+#pragma mark - ZJScrollPageViewChildVcDelegate
 - (void) setUpWhenViewWillAppearForTitle:(NSString *)title forIndex:(NSInteger)index firstTimeAppear:(BOOL)isFirstTime
 {
     if (isFirstTime)
@@ -141,6 +148,15 @@
             [self setNetWorking];
         }
     }
+}
+
+#pragma mark - Test
+- (void)testFPSLabel
+{
+    _fpsLabel = [YYFPSLabel new];
+    _fpsLabel.frame = CGRectMake(200, 200, 50, 30);
+    [_fpsLabel sizeToFit];
+    [self.navigationController.navigationBar addSubview:_fpsLabel];
 }
 
 @end
