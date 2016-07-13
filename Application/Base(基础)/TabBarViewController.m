@@ -89,7 +89,9 @@
     NSArray *tabBarItemsAttributes = @[ dict1, dict2, dict3, dict4, dict5];
     
     self.tabBarItemsAttributes = tabBarItemsAttributes;
-    self.tabBar.backgroundImage = [UIImage imageNamed:@"TabBarBackground"];
+
+    NSString *path = [[NSBundle mainBundle]pathForResource:@"TabBarBackground@2x"ofType:@"png"];
+    self.tabBar.backgroundImage = [UIImage imageWithContentsOfFile:path];
 }
 
 #pragma mark - Setup NavigationBarAppearance

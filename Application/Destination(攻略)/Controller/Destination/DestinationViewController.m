@@ -71,7 +71,7 @@
         [weakSelf.contentView setContentOffSet:CGPointMake(weakSelf.contentView.bounds.size.width * index, 0) animated:YES];
     }];
     
-    segment.backgroundImage = [UIImage imageNamed:@"LYSegmentedSliderControlBackground"];
+    segment.backgroundImage = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle]pathForResource:@"LYSegmentedSliderControlBackground" ofType:@"png"]];
     self.segmentView = segment;
     
     [self.view addSubview:_segmentView];

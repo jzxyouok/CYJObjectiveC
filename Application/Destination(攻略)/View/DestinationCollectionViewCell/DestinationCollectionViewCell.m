@@ -28,23 +28,22 @@
     
 }
 
-#pragma mark - Load
+#pragma mark - Reload
 - (void) reloadCellWithModel:(Destinations *)model
 {
-    [_imageView yy_setImageWithURL:[NSURL URLWithString:model.image_url] options:YYWebImageOptionSetImageWithFadeAnimation];
     [_imageView
-     yy_setImageWithURL:[NSURL URLWithString:model.image_url]
-     placeholder:nil
-     options:YYWebImageOptionSetImageWithFadeAnimation
-     manager:nil
-     progress:nil
-     transform:^UIImage * _Nullable(UIImage * _Nonnull image, NSURL * _Nonnull url) {
-         image = [image yy_imageByResizeToSize:CGSizeMake(WIDTH(self.imageView), HEIGHT(self.imageView)) contentMode:UIViewContentModeScaleAspectFill];
-         return image;
-     }
-     completion:^(UIImage * _Nullable image, NSURL * _Nonnull url, YYWebImageFromType from, YYWebImageStage stage, NSError * _Nullable error) {
-         [_imageView setImage:image];
-     }];
+        yy_setImageWithURL:[NSURL URLWithString:model.image_url]
+                         placeholder:nil
+                                options:YYWebImageOptionSetImageWithFadeAnimation
+                              manager:nil
+                              progress:nil
+                            transform:^UIImage * _Nullable(UIImage * _Nonnull image, NSURL * _Nonnull url) {
+                                image = [image yy_imageByResizeToSize:CGSizeMake(WIDTH(self.imageView), HEIGHT(self.imageView)) contentMode:UIViewContentModeScaleAspectFill];
+                                return image;
+                            }
+                        completion:^(UIImage * _Nullable image, NSURL * _Nonnull url, YYWebImageFromType from, YYWebImageStage stage, NSError * _Nullable error) {
+                            [_imageView setImage:image];
+                        }];
     
     _nameZhLabel.text = model.name_zh_cn;
     _nameEnLabel.text = model.name_en;

@@ -7,18 +7,22 @@
 //
 
 #import "DestinationChildViewController.h"
+
+#import "DetailModel.h"
+#import "DestinationModel.h"
+
 #import "DestinationCollectionViewCell.h"
 #import "DestinationCollectionReusableView.h"
-#import "DestinationModel.h"
-#import "DetailModel.h"
-#import "ZJScrollPageViewDelegate.h"
+
 #import "DetailViewController.h"
+
+#import "ZJScrollPageViewDelegate.h"
 
 #import "URLDefine.h"
 #import "Define.h"
 
 #import "HYBNetworking.h"
-#import "MJRefresh.h"
+#import "YYModel.h"
 
 /**test**/
 #import "YYFPSLabel.h"
@@ -60,10 +64,12 @@ static NSString *kHeader = @"destinationCollectionReusableView";
     
     _collectionView.backgroundColor = kColor(229, 239, 244, 1);
     
+    _collectionView.showsVerticalScrollIndicator = NO;
+    
     _collectionView.dataSource = self;
     _collectionView.delegate = self;
     
-    _collectionView.contentInset = UIEdgeInsetsMake(0, 0, tabBarHeight + navigationBarHeight + titleScrollViewHeight, 0);
+    _collectionView.contentInset = UIEdgeInsetsMake(0, 0, tabBarHeight + navigationBarHeight + titleScrollViewHeight + 10, 0);
     
     UINib *destinationCollectionViewCell = [UINib nibWithNibName:@"DestinationCollectionViewCell" bundle:nil];
     [_collectionView registerNib:destinationCollectionViewCell forCellWithReuseIdentifier:kDestinationCell];
@@ -76,7 +82,6 @@ static NSString *kHeader = @"destinationCollectionReusableView";
 - (void) setNetWorking
 {
     [HYBNetworking getWithUrl:kURLdestination refreshCache:YES success:^(id response) {
-        [self.collectionView.mj_footer endRefreshing];
         for (NSDictionary *dict in response)
         {
             DestinationModel *model = [DestinationModel yy_modelWithDictionary:dict];

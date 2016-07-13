@@ -88,7 +88,7 @@
         [weakSelf.contentView setContentOffSet:CGPointMake(weakSelf.contentView.bounds.size.width * index, 0) animated:YES];
     }];
     
-    segment.backgroundImage = [UIImage imageNamed:@"LYSegmentedSliderControlBackground"];
+    segment.backgroundImage = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle]pathForResource:@"LYSegmentedSliderControlBackground" ofType:@"png"]];
     self.segmentView = segment;
     
     [self.view addSubview:_segmentView];
@@ -124,10 +124,10 @@
 #pragma mark - Create Navigationitem
 - (void) createNavigationItem
 {
-    UIBarButtonItem *leftItem = [self createBarButtonItemWithImage:@"nav_setting_icon" andAction:@selector(pressLeftBarButtonItem)];
+    UIBarButtonItem *leftItem = [self createBarButtonItemWithImage:@"nav_setting_icon@2x" andAction:@selector(pressLeftBarButtonItem)];
     self.navigationItem.leftBarButtonItem = leftItem;
     
-    UIBarButtonItem *rightItem = [self createBarButtonItemWithImage:@"nav_search_icon" andAction:@selector(pressRightBarButtonItem)];
+    UIBarButtonItem *rightItem = [self createBarButtonItemWithImage:@"nav_search_icon@2x" andAction:@selector(pressRightBarButtonItem)];
     self.navigationItem.rightBarButtonItem = rightItem;
 }
 
@@ -135,7 +135,7 @@
 {
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     
-    [button setBackgroundImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
+    [button setBackgroundImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle]pathForResource:imageName ofType:@"png"]] forState:UIControlStateNormal];
     button.frame = CGRectMake(0, 0, 20, 20);
     
     [button addTarget:self action:action forControlEvents:UIControlEventTouchUpInside];

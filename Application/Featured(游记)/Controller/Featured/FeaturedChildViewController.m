@@ -8,8 +8,11 @@
 
 
 #import "FeaturedChildViewController.h"
-#import "FeaturedCollectionViewCell.h"
+
 #import "FeaturedModel.h"
+
+#import "FeaturedCollectionViewCell.h"
+
 #import "ZJScrollPageViewDelegate.h"
 
 #import "URLDefine.h"
@@ -17,6 +20,7 @@
 
 #import "HYBNetworking.h"
 #import "MJRefresh.h"
+#import "YYModel.h"
 
 /**test**/
 #import "YYFPSLabel.h"
@@ -57,10 +61,12 @@ static NSString *kFeaturedCell = @"featuredCollectionViewCell";
     
     _collectionView.backgroundColor = kColor(229, 239, 244, 1);
     
+    _collectionView.showsVerticalScrollIndicator = NO;
+    
     _collectionView.dataSource = self;
     _collectionView.delegate = self;
     
-    self.collectionView.contentInset = UIEdgeInsetsMake(0, 0, tabBarHeight + navigationBarHeight + titleScrollViewHeight, 0);
+    self.collectionView.contentInset = UIEdgeInsetsMake(0, 0, tabBarHeight + navigationBarHeight + titleScrollViewHeight + 5, 0);
     
     self.collectionView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
         _page++;

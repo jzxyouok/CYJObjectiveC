@@ -21,7 +21,7 @@
     
 }
 
-#pragma mark - Action
+#pragma mark - Set
 - (void) setWithTitle:(NSString *)title
 {
     _headerLabel.text = title;

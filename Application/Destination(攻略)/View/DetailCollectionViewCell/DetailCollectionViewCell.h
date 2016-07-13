@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class DetailModel;
+
 @interface DetailCollectionViewCell : UICollectionViewCell
+
+- (void) reloadCellWithModel: (DetailModel *) model;
 
 @end
