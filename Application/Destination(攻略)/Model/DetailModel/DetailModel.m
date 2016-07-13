@@ -9,5 +9,22 @@
 #import "DetailModel.h"
 
 @implementation DetailModel
++ (NSDictionary *)modelContainerPropertyGenericClass
+{
+    return @{
+                    @"destination_contents" : [Destination_Contents class],
+                    @"weather" : Weather.class
+                    };
+}
 
 @end
+
+@implementation Weather
+
+@end
+
+@implementation Destination_Contents
+
+@end
+
+

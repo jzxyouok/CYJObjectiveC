@@ -10,4 +10,7 @@
 
 @interface DetailViewController : UIViewController
 
+@property (copy, nonatomic) NSString *url;
+@property (copy, nonatomic) NSString *itemTitle;
+
 @end

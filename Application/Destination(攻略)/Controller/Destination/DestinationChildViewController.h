@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DestinationChildViewController : UIViewController 
+@interface DestinationChildViewController : UIViewController
 
 @end

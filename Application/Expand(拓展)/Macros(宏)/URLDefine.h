@@ -11,6 +11,7 @@
 
 #define kURLfeatured @"http://chanyouji.com/api/trips/featured.json?page=%d"
 
-#define KURLDes @"http://chanyouji.com/api/destinations.json"
+#define kURLdestination @"http://chanyouji.com/api/destinations.json"
+#define kURLdetail @"http://chanyouji.com/api/destinations/%d.json?page=%d"
 
 #endif /* URLDefine_h */

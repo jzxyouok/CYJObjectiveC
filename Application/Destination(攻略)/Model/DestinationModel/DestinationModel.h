@@ -7,10 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "YYModel.h"
 
 @class Destinations;
 
-@interface DestinationModel : NSObject
+@interface DestinationModel : NSObject <YYModel>
 
 @property (nonatomic, copy) NSString *category;
 @property (nonatomic, strong) NSArray<Destinations *> *destinations;

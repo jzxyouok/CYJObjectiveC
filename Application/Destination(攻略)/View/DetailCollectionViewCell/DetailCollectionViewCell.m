@@ -9,9 +9,12 @@
 #import "DetailCollectionViewCell.h"
 
 @implementation DetailCollectionViewCell
+#pragma mark - Life Circle
+- (void)awakeFromNib
+{
 
-- (void)awakeFromNib {
-    // Initialization code
 }
+
+#pragma mark - 
 
 @end

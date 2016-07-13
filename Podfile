@@ -8,5 +8,6 @@ pod 'CYLTabBarController'
 pod 'MJRefresh'
 pod 'MBProgressHUD'
 pod 'YYWebImage'
+pod 'YYModel'
 
 end

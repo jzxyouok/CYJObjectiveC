@@ -84,8 +84,7 @@ static NSString *kFeaturedCell = @"featuredCollectionViewCell";
         [self.collectionView.mj_footer endRefreshing];
         for (NSDictionary *dict in response)
         {
-            FeaturedModel *model = [[FeaturedModel alloc]init];
-            [model setValuesForKeysWithDictionary:dict];
+            FeaturedModel *model = [FeaturedModel yy_modelWithDictionary:dict];
             [_dataSource addObject:model];
         }
         [self.collectionView reloadData];
@@ -154,7 +153,7 @@ static NSString *kFeaturedCell = @"featuredCollectionViewCell";
 - (void)testFPSLabel
 {
     _fpsLabel = [YYFPSLabel new];
-    _fpsLabel.frame = CGRectMake(200, 200, 50, 30);
+    _fpsLabel.frame = CGRectMake(250, 10, 50, 30);
     [_fpsLabel sizeToFit];
     [self.navigationController.navigationBar addSubview:_fpsLabel];
 }

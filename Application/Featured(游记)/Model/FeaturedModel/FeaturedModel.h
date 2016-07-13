@@ -7,10 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "YYModel.h"
 
 @class FeaturedUserModel;
 
-@interface FeaturedModel : NSObject
+@interface FeaturedModel : NSObject <YYModel>
 
 @property (nonatomic, assign) NSInteger id;
 @property (nonatomic, copy) NSString *start_date;

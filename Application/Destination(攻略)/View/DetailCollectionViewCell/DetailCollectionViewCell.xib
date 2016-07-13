@@ -13,10 +13,7 @@
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="260"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cDn-XV-vyr">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="180"/>
-                    </imageView>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="S3y-Jh-LSL">
+                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="S3y-Jh-LSL">
                         <rect key="frame" x="0.0" y="180" width="80" height="80"/>
                         <inset key="titleEdgeInsets" minX="0.0" minY="45" maxX="0.0" maxY="0.0"/>
                         <inset key="imageEdgeInsets" minX="28" minY="-15" maxX="0.0" maxY="0.0"/>
@@ -43,7 +40,7 @@
                             </attributedString>
                         </state>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Pl-Ut-l7r">
+                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Pl-Ut-l7r">
                         <rect key="frame" x="80" y="180" width="80" height="80"/>
                         <inset key="titleEdgeInsets" minX="0.0" minY="45" maxX="0.0" maxY="0.0"/>
                         <inset key="imageEdgeInsets" minX="28" minY="-15" maxX="0.0" maxY="0.0"/>
@@ -70,7 +67,7 @@
                             </attributedString>
                         </state>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TRf-OM-flX">
+                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TRf-OM-flX">
                         <rect key="frame" x="240" y="180" width="80" height="80"/>
                         <inset key="titleEdgeInsets" minX="0.0" minY="45" maxX="0.0" maxY="0.0"/>
                         <inset key="imageEdgeInsets" minX="28" minY="-15" maxX="0.0" maxY="0.0"/>
@@ -122,7 +119,7 @@
                         </attributedString>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q7U-hE-uKS">
+                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q7U-hE-uKS">
                         <rect key="frame" x="160" y="180" width="80" height="80"/>
                         <inset key="titleEdgeInsets" minX="-5" minY="45" maxX="0.0" maxY="0.0"/>
                         <inset key="imageEdgeInsets" minX="28" minY="-15" maxX="0.0" maxY="0.0"/>
@@ -148,9 +145,32 @@
                             </attributedString>
                         </state>
                     </button>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cDn-XV-vyr">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="180"/>
+                    </imageView>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
+            <constraints>
+                <constraint firstItem="1Pl-Ut-l7r" firstAttribute="leading" secondItem="S3y-Jh-LSL" secondAttribute="trailing" id="1bv-aE-1pl"/>
+                <constraint firstAttribute="bottom" secondItem="TRf-OM-flX" secondAttribute="bottom" id="CGm-dS-CfC"/>
+                <constraint firstAttribute="bottom" secondItem="q7U-hE-uKS" secondAttribute="bottom" id="IB8-ND-B0j"/>
+                <constraint firstItem="1Pl-Ut-l7r" firstAttribute="width" secondItem="S3y-Jh-LSL" secondAttribute="width" id="KzK-NO-ypr"/>
+                <constraint firstItem="TRf-OM-flX" firstAttribute="height" secondItem="S3y-Jh-LSL" secondAttribute="height" id="Lj0-vd-HkP"/>
+                <constraint firstItem="cDn-XV-vyr" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="NaL-vI-Od0"/>
+                <constraint firstItem="q7U-hE-uKS" firstAttribute="width" secondItem="S3y-Jh-LSL" secondAttribute="width" id="PW1-ul-7tY"/>
+                <constraint firstItem="q7U-hE-uKS" firstAttribute="height" secondItem="S3y-Jh-LSL" secondAttribute="height" id="US8-qF-qa7"/>
+                <constraint firstItem="q7U-hE-uKS" firstAttribute="top" secondItem="cDn-XV-vyr" secondAttribute="bottom" id="UUe-6c-ElP"/>
+                <constraint firstAttribute="bottom" secondItem="1Pl-Ut-l7r" secondAttribute="bottom" id="WXq-tV-1Va"/>
+                <constraint firstAttribute="trailing" secondItem="cDn-XV-vyr" secondAttribute="trailing" id="XqV-Vk-KFx"/>
+                <constraint firstItem="cDn-XV-vyr" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="aUj-t0-0cW"/>
+                <constraint firstItem="TRf-OM-flX" firstAttribute="width" secondItem="S3y-Jh-LSL" secondAttribute="width" id="bgt-VJ-il0"/>
+                <constraint firstItem="S3y-Jh-LSL" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="hZs-tq-P4d"/>
+                <constraint firstItem="q7U-hE-uKS" firstAttribute="leading" secondItem="1Pl-Ut-l7r" secondAttribute="trailing" id="i7Q-64-WJm"/>
+                <constraint firstItem="TRf-OM-flX" firstAttribute="leading" secondItem="q7U-hE-uKS" secondAttribute="trailing" id="lmL-xo-oEe"/>
+                <constraint firstAttribute="bottom" secondItem="S3y-Jh-LSL" secondAttribute="bottom" id="mWx-IO-Hqn"/>
+                <constraint firstItem="1Pl-Ut-l7r" firstAttribute="height" secondItem="S3y-Jh-LSL" secondAttribute="height" id="oFd-0w-Ye6"/>
+            </constraints>
         </collectionViewCell>
     </objects>
     <resources>

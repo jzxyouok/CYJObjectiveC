@@ -23,6 +23,7 @@ PODS:
   - YYImage (1.0.2):
     - YYImage/Core (= 1.0.2)
   - YYImage/Core (1.0.2)
+  - YYModel (1.0.4)
   - YYWebImage (1.0.4):
     - YYCache
     - YYImage
@@ -32,6 +33,7 @@ DEPENDENCIES:
   - HYBNetworking
   - MBProgressHUD
   - MJRefresh
+  - YYModel
   - YYWebImage
 
 SPEC CHECKSUMS:
@@ -42,8 +44,9 @@ SPEC CHECKSUMS:
   MJRefresh: c5f1f1653e5a1b932c90f78074f2bc86f3f9bd5e
   YYCache: 282f35b5b0990833d0b7a06d864a87141a021da2
   YYImage: 2cc79ed49b9549b71c6715cefe7b0f5ab3d33abf
+  YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
   YYWebImage: 0431ed108e104527669b86f75efd58958425cca2
 
-PODFILE CHECKSUM: a5538a19f8b358be2f9c8de2c73a449bbaa34e8d
+PODFILE CHECKSUM: bad48bfea85dbb49ff69b3f5b1e22556e029b231
 
 COCOAPODS: 1.0.1

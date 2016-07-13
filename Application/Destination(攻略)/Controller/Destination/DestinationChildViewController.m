@@ -10,7 +10,9 @@
 #import "DestinationCollectionViewCell.h"
 #import "DestinationCollectionReusableView.h"
 #import "DestinationModel.h"
+#import "DetailModel.h"
 #import "ZJScrollPageViewDelegate.h"
+#import "DetailViewController.h"
 
 #import "URLDefine.h"
 #import "Define.h"
@@ -48,8 +50,8 @@ static NSString *kHeader = @"destinationCollectionReusableView";
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc]init];
     flowLayout.minimumLineSpacing = 10;
     flowLayout.minimumInteritemSpacing = 0;
-    flowLayout.sectionInset = UIEdgeInsetsMake(10, 10, 0, 10);
-    flowLayout.headerReferenceSize = CGSizeMake(WIDTH(self.view), 30);
+    flowLayout.sectionInset = UIEdgeInsetsMake(0, 10, 0, 10);
+    flowLayout.headerReferenceSize = CGSizeMake(WIDTH(self.view), 50);
     flowLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
     flowLayout.itemSize = CGSizeMake(WIDTH(self.view) / 2 - 13, (WIDTH(self.view) / 2 - 13) * 1.38);
     
@@ -73,12 +75,11 @@ static NSString *kHeader = @"destinationCollectionReusableView";
 #pragma mark - Set NetWorking
 - (void) setNetWorking
 {
-    [HYBNetworking getWithUrl:KURLDes refreshCache:YES success:^(id response) {
+    [HYBNetworking getWithUrl:kURLdestination refreshCache:YES success:^(id response) {
         [self.collectionView.mj_footer endRefreshing];
         for (NSDictionary *dict in response)
         {
-            DestinationModel *model = [[DestinationModel alloc]init];
-            [model setValuesForKeysWithDictionary:dict];
+            DestinationModel *model = [DestinationModel yy_modelWithDictionary:dict];
             [_dataSource addObject:model];
         }
         [self.collectionView reloadData];
@@ -134,34 +135,11 @@ static NSString *kHeader = @"destinationCollectionReusableView";
     
     if ([self.title isEqualToString:@"国外"])
     {
-        switch (indexPath.section)
-        {
-            case 0:
-                [cell reloadCellWithModel:(DestinationModel *)[_dataSource[0] destinations][indexPath.row]];
-                break;
-            case 1:
-                [cell reloadCellWithModel:(DestinationModel *)[_dataSource[1] destinations][indexPath.row]];
-                break;
-            case 2:
-                [cell reloadCellWithModel:(DestinationModel *)[_dataSource[2] destinations][indexPath.row]];
-                break;
-            default:
-                break;
-        }
+        [cell reloadCellWithModel:(DestinationModel *)[_dataSource[indexPath.section] destinations][indexPath.row]];
     }
     else if ([self.title isEqualToString:@"国内"])
     {
-        switch (indexPath.section)
-        {
-            case 0:
-                [cell reloadCellWithModel:(DestinationModel *)[_dataSource[3] destinations][indexPath.row]];
-                break;
-            case 1:
-                [cell reloadCellWithModel:(DestinationModel *)[_dataSource[4] destinations][indexPath.row]];
-                break;
-            default:
-                break;
-        }
+        [cell reloadCellWithModel:(DestinationModel *)[_dataSource[indexPath.section + 3] destinations][indexPath.row]];
     }
     return cell;
 }
@@ -218,37 +196,22 @@ static NSString *kHeader = @"destinationCollectionReusableView";
 #pragma mark - CollectionViewDelegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
+    DetailViewController *detailViewController = [[DetailViewController alloc]init];
+    Destinations *model = [[Destinations alloc]init];
+
     if ([self.title isEqualToString:@"国外"])
     {
-        switch (indexPath.section)
-        {
-            case 0:
-                NSLog(@"亚洲 %lu is selete", indexPath.row);
-                break;
-            case 1:
-                NSLog(@"欧洲 %lu is selete", indexPath.row);
-                break;
-            case 2:
-                NSLog(@"美洲 %lu is selete", indexPath.row);
-                break;
-            default:
-                break;
-        }
+        model = [_dataSource[indexPath.section] destinations][indexPath.row];
+        detailViewController.url = [NSString stringWithFormat:kURLdetail, (int)model.id, 1];
+        detailViewController.itemTitle = [NSString stringWithString:model.name_zh_cn];
     }
     else if ([self.title isEqualToString:@"国内"])
     {
-        switch (indexPath.section)
-        {
-            case 0:
-                NSLog(@"港澳台 %lu is selete", indexPath.row);
-                break;
-            case 1:
-                NSLog(@"大陆 %lu is selete", indexPath.row);
-                break;
-            default:
-                break;
-        }
+        model = [_dataSource[indexPath.section + 3] destinations][indexPath.row];
+        detailViewController.url = [NSString stringWithFormat:kURLdetail, (int)model.id, 1];
+        detailViewController.itemTitle = [NSString stringWithString:model.name_zh_cn];
     }
+    [self.navigationController pushViewController:detailViewController animated:YES];
 }
 
 #pragma mark - ZJScrollPageViewChildVcDelegate
@@ -273,7 +236,7 @@ static NSString *kHeader = @"destinationCollectionReusableView";
 - (void)testFPSLabel
 {
     _fpsLabel = [YYFPSLabel new];
-    _fpsLabel.frame = CGRectMake(200, 200, 50, 30);
+    _fpsLabel.frame = CGRectMake(250, 10, 50, 30);
     [_fpsLabel sizeToFit];
     [self.navigationController.navigationBar addSubview:_fpsLabel];
 }

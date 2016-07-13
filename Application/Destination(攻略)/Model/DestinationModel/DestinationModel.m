@@ -9,24 +9,12 @@
 #import "DestinationModel.h"
 
 @implementation DestinationModel
-- (void) setValue:(id)value forKey:(NSString *)key
++ (NSDictionary *)modelContainerPropertyGenericClass
 {
-    if ([key isEqualToString:@"destinations"])
-    {
-        NSMutableArray *mutArray = [NSMutableArray array];
-        for (NSDictionary *dict in value) {
-            Destinations *model = [[Destinations alloc]init];
-            [model setValuesForKeysWithDictionary:dict];
-            [mutArray addObject:model];
-        }
-        _destinations = mutArray;
-    }
-    else
-    {
-        [super setValue:value forKey:key];
-    }
+    return @{
+                    @"destinations":[Destinations class]
+                    };
 }
-
 @end
 
 @implementation Destinations

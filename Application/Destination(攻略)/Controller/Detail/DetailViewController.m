@@ -7,31 +7,56 @@
 //
 
 #import "DetailViewController.h"
+#import "DestinationChildViewController.h"
 
 @interface DetailViewController ()
 
 @end
 
 @implementation DetailViewController
-
-- (void)viewDidLoad {
+#pragma mark - Life Circle
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    self.navigationItem.title = [NSString stringWithFormat:@"%@攻略", _itemTitle];
+    
+    self.view.backgroundColor = [UIColor whiteColor];
+    [self createNavigationItem];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark - Create Navigationitem
+- (void) createNavigationItem
+{
+    UIBarButtonItem *leftItem = [self createBarButtonItemWithImage:@"nav_back_icon" andAction:@selector(pressLeftBarButtonItem)];
+    self.navigationItem.leftBarButtonItem = leftItem;
+    
+    UIBarButtonItem *rightItem = [self createBarButtonItemWithImage:@"nav_share_icon" andAction:@selector(pressRightBarButtonItem)];
+    self.navigationItem.rightBarButtonItem = rightItem;
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (UIBarButtonItem *) createBarButtonItemWithImage: (NSString *) imageName andAction: (SEL) action
+{
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    
+    [button setBackgroundImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
+    button.frame = CGRectMake(0, 0, 20, 20);
+    
+    [button addTarget:self action:action forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *item = [[UIBarButtonItem alloc]initWithCustomView:button];
+    return item;
 }
-*/
+
+#pragma mark - Action
+- (void) pressLeftBarButtonItem
+{
+    NSLog(@"left press");
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
+
+- (void) pressRightBarButtonItem
+{
+    NSLog(@"right press");
+}
 
 @end

@@ -9,25 +9,9 @@
 #import "FeaturedModel.h"
 
 @implementation FeaturedModel
-- (void) setValue:(id)value forKey:(NSString *)key
-{
-    if ([key isEqualToString:@"user"])
-    {
-        FeaturedUserModel *model = [[FeaturedUserModel alloc]init];
-        [model setValuesForKeysWithDictionary:value];
-        [super setValue:model forKey:key];
-    }
-    else
-    {
-        [super setValue:value forKey:key];
-    }
-}
 
 @end
 
 @implementation FeaturedUserModel
 
 @end
-
-
-
