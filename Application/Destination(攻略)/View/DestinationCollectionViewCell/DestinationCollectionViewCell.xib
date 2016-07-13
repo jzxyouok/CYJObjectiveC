@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="cell" id="gTV-IL-0wX" customClass="DestinationCollectionViewCell">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="destinationCollectionViewCell" id="gTV-IL-0wX" customClass="DestinationCollectionViewCell">
             <rect key="frame" x="0.0" y="0.0" width="145" height="200"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="145" height="200"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zAE-2o-JaO">
-                        <rect key="frame" x="2.5" y="0.0" width="140" height="200"/>
+                        <rect key="frame" x="3" y="0.0" width="140" height="200"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G6r-Mr-4fh">
                         <rect key="frame" x="10" y="10" width="100" height="20"/>
@@ -50,52 +50,39 @@
                         </attributedString>
                         <nil key="highlightedColor"/>
                     </label>
-                    <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HaU-U9-In7">
-                        <rect key="frame" x="35" y="180" width="75" height="10"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vrN-B3-6Dx">
-                                <rect key="frame" x="0.0" y="0.0" width="75" height="10"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="10" id="ocq-Ps-2VZ"/>
-                                    <constraint firstAttribute="width" constant="75" id="pvU-sb-t5G"/>
-                                </constraints>
-                                <attributedString key="attributedText">
-                                    <fragment content="占位">
-                                        <attributes>
-                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <font key="NSFont" size="11" name="PingFangSC-Regular"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vrN-B3-6Dx">
+                        <rect key="frame" x="35" y="170" width="75" height="15"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="75" id="Kqu-b4-ymB"/>
-                            <constraint firstItem="vrN-B3-6Dx" firstAttribute="top" secondItem="HaU-U9-In7" secondAttribute="top" id="KsH-zL-Vtj"/>
-                            <constraint firstAttribute="height" constant="10" id="OtR-eC-OEV"/>
-                            <constraint firstItem="vrN-B3-6Dx" firstAttribute="leading" secondItem="HaU-U9-In7" secondAttribute="leading" id="hyt-PE-QWf"/>
+                            <constraint firstAttribute="width" constant="75" id="Hti-1v-LgQ"/>
+                            <constraint firstAttribute="height" constant="15" id="sBq-Ox-fda"/>
                         </constraints>
+                        <attributedString key="attributedText">
+                            <fragment content="占位">
+                                <attributes>
+                                    <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <font key="NSFont" size="11" name="PingFangSC-Regular"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                        <nil key="highlightedColor"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                            <userDefinedRuntimeAttribute type="number" keyPath="keyPath">
-                                <integer key="value" value="5"/>
-                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="7.5"/>
                         </userDefinedRuntimeAttributes>
-                    </view>
+                    </label>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="zAE-2o-JaO" secondAttribute="bottom" id="1u7-iI-4FC"/>
                 <constraint firstItem="zAE-2o-JaO" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="PaP-x5-Ow9"/>
-                <constraint firstAttribute="bottom" secondItem="HaU-U9-In7" secondAttribute="bottom" constant="10" id="QIw-EF-qtC"/>
                 <constraint firstItem="G6r-Mr-4fh" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="V7d-aT-oqf"/>
-                <constraint firstItem="HaU-U9-In7" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="aiO-Ni-pXt"/>
+                <constraint firstItem="vrN-B3-6Dx" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="VFz-c4-8J8"/>
                 <constraint firstItem="V6A-eU-gH0" firstAttribute="top" secondItem="G6r-Mr-4fh" secondAttribute="bottom" constant="5" id="c2i-jl-DDu"/>
                 <constraint firstItem="V6A-eU-gH0" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="gXz-oC-AN6"/>
+                <constraint firstAttribute="bottom" secondItem="vrN-B3-6Dx" secondAttribute="bottom" constant="15" id="ieI-6S-DHC"/>
                 <constraint firstItem="G6r-Mr-4fh" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="ilT-8p-rIV"/>
                 <constraint firstAttribute="trailing" secondItem="zAE-2o-JaO" secondAttribute="trailing" constant="2.5" id="pdW-Y2-NzF"/>
                 <constraint firstItem="zAE-2o-JaO" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="2.5" id="vwg-py-s0f"/>

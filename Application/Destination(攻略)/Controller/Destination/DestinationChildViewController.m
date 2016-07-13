@@ -8,6 +8,7 @@
 
 #import "DestinationChildViewController.h"
 #import "DestinationCollectionViewCell.h"
+#import "DestinationCollectionReusableView.h"
 #import "DestinationModel.h"
 #import "ZJScrollPageViewDelegate.h"
 
@@ -30,6 +31,9 @@
 
 @end
 
+static NSString *kDestinationCell = @"destinationCollectionViewCell";
+static NSString *kHeader = @"destinationCollectionReusableView";
+
 @implementation DestinationChildViewController
 #pragma mark - Life Circle
 - (void)viewDidLoad
@@ -44,8 +48,10 @@
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc]init];
     flowLayout.minimumLineSpacing = 10;
     flowLayout.minimumInteritemSpacing = 0;
+    flowLayout.sectionInset = UIEdgeInsetsMake(10, 10, 0, 10);
+    flowLayout.headerReferenceSize = CGSizeMake(WIDTH(self.view), 30);
     flowLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
-    flowLayout.itemSize = CGSizeMake(WIDTH(self.view) / 2 - 15, (WIDTH(self.view) / 2 - 15) * 1.38);
+    flowLayout.itemSize = CGSizeMake(WIDTH(self.view) / 2 - 13, (WIDTH(self.view) / 2 - 13) * 1.38);
     
     _collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, WIDTH(self.view), HEIGHT(self.view)) collectionViewLayout:flowLayout];
     [self.view addSubview:_collectionView];
@@ -55,17 +61,16 @@
     _collectionView.dataSource = self;
     _collectionView.delegate = self;
     
-    self.collectionView.contentInset = UIEdgeInsetsMake(0, 0, tabBarHeight + navigationBarHeight + titleScrollViewHeight, 0);
+    _collectionView.contentInset = UIEdgeInsetsMake(0, 0, tabBarHeight + navigationBarHeight + titleScrollViewHeight, 0);
     
     UINib *destinationCollectionViewCell = [UINib nibWithNibName:@"DestinationCollectionViewCell" bundle:nil];
-    [self.collectionView registerNib:destinationCollectionViewCell forCellWithReuseIdentifier:@"cell"];
+    [_collectionView registerNib:destinationCollectionViewCell forCellWithReuseIdentifier:kDestinationCell];
+    
+    UINib *destinationCollectionReusableView = [UINib nibWithNibName:@"DestinationCollectionReusableView" bundle:nil];
+    [_collectionView registerNib:destinationCollectionReusableView forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:kHeader];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-}
-
-#pragma mark - Notification
+#pragma mark - Set NetWorking
 - (void) setNetWorking
 {
     [HYBNetworking getWithUrl:KURLDes refreshCache:YES success:^(id response) {
@@ -125,7 +130,7 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    DestinationCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
+    DestinationCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kDestinationCell forIndexPath:indexPath];
     
     if ([self.title isEqualToString:@"国外"])
     {
@@ -174,6 +179,42 @@
     return 1;
 }
 
+-(UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
+{
+    DestinationCollectionReusableView *view = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:kHeader forIndexPath:indexPath];
+    
+    if ([self.title isEqualToString:@"国外"])
+    {
+        switch (indexPath.section) {
+            case 0:
+                [view setWithTitle:@"亚洲"];
+                break;
+            case 1:
+                [view setWithTitle:@"欧洲"];
+                break;
+            case 2:
+                [view setWithTitle:@"美洲"];
+                break;
+            default:
+                break;
+        }
+    }
+    else if ([self.title isEqualToString:@"国内"])
+    {
+        switch (indexPath.section) {
+            case 0:
+                [view setWithTitle:@"港澳台"];
+                break;
+            case 1:
+                [view setWithTitle:@"大陆"];
+                break;
+            default:
+                break;
+        }
+    }
+    return view;
+}
+
 #pragma mark - CollectionViewDelegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -208,12 +249,6 @@
                 break;
         }
     }
-}
-
-#pragma mark - CollectionViewDelegateFlowLayout
-- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
-{
-    return UIEdgeInsetsMake(10, 10, 0, 10);
 }
 
 #pragma mark - ZJScrollPageViewChildVcDelegate

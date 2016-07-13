@@ -24,12 +24,12 @@
 @end
 
 @implementation FeaturedCollectionViewCell
-#pragma mark - life circle
+#pragma mark - Life Circle
 - (void)awakeFromNib
 {
 }
 
-#pragma mark - load
+#pragma mark - Reload
 - (void) reloadCellWithModel:(FeaturedModel *)model
 {
     [_photeImageView

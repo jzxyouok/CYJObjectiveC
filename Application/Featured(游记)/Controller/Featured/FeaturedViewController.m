@@ -76,13 +76,11 @@
     style.gradualChangeTitleColor = YES;
     
     style.coverBackgroundColor = [UIColor whiteColor];
-    
     style.coverCornerRadius = 5;
-    
     style.coverHeight = 30;
-    
-    style.normalTitleColor = [UIColor colorWithRed:68 / 255.0 green:68 / 255.0 blue:68 / 255.0 alpha:1.0];
-    style.selectedTitleColor = [UIColor colorWithRed:17 / 255.0 green:136 / 255.0 blue:219 / 255.0 alpha:1.0];
+
+    style.normalTitleColor = kColor(68, 68, 68, 1);
+    style.selectedTitleColor = kColor(17, 136, 219, 1);
     
     __weak typeof(self) weakSelf = self;
     

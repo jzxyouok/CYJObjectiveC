@@ -31,7 +31,7 @@
 #define MaxY(v)                 CGRectGetMaxY((v).frame)
 
 //  设置颜色
-#define kColor(r, g, b, a) [UIColor colorWithRed:r / 255.0 green:(r)/255.0 blue:(r)/255.0 alpha:a]
+#define kColor(r, g, b, a) [UIColor colorWithRed:(r) / 255.0 green:(g)/255.0 blue:(b)/255.0 alpha:a]
 
 //  图片加载
 #define kImageName(_name_) [UIImage imageNamed:_name_]

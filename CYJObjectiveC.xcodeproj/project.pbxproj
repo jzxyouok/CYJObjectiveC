@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		B2FB317F2DAE6531096B02B9 /* libPods-CYJObjectiveC.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EE87ADFA0129D71A7D155655 /* libPods-CYJObjectiveC.a */; };
+		BC5B02851D35E14800960A04 /* DestinationCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC5B02831D35E14800960A04 /* DestinationCollectionViewCell.m */; };
+		BC5B02861D35E14800960A04 /* DestinationCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC5B02841D35E14800960A04 /* DestinationCollectionViewCell.xib */; };
+		BC5B028B1D35E1CE00960A04 /* DestinationCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC5B02891D35E1CE00960A04 /* DestinationCollectionReusableView.m */; };
+		BC5B028C1D35E1CE00960A04 /* DestinationCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC5B028A1D35E1CE00960A04 /* DestinationCollectionReusableView.xib */; };
+		BC5B06D31D36048600960A04 /* DetailCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC5B06D11D36048600960A04 /* DetailCollectionViewCell.m */; };
+		BC5B06D41D36048600960A04 /* DetailCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC5B06D21D36048600960A04 /* DetailCollectionViewCell.xib */; };
+		BC5B06D71D360B9500960A04 /* DetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC5B06D61D360B9500960A04 /* DetailModel.m */; };
+		BC5B06DA1D360BB500960A04 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC5B06D91D360BB500960A04 /* DetailViewController.m */; };
 		BCC484AA1D33240100C77AAE /* UIView+ZJFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = BCC4849C1D33240100C77AAE /* UIView+ZJFrame.m */; };
 		BCC484AB1D33240100C77AAE /* UIViewController+ZJScrollPageController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCC4849E1D33240100C77AAE /* UIViewController+ZJScrollPageController.m */; };
 		BCC484AC1D33240100C77AAE /* ZJContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = BCC484A01D33240100C77AAE /* ZJContentView.m */; };
@@ -37,8 +45,6 @@
 		FD74EE291D3550EA00B3D426 /* FeaturedCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FD74EE271D3550EA00B3D426 /* FeaturedCollectionViewCell.m */; };
 		FD74EE2A1D3550EA00B3D426 /* FeaturedCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD74EE281D3550EA00B3D426 /* FeaturedCollectionViewCell.xib */; };
 		FD74EE2F1D35511100B3D426 /* DestinationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FD74EE2D1D35511100B3D426 /* DestinationModel.m */; };
-		FD74EE341D35511A00B3D426 /* DestinationCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FD74EE321D35511A00B3D426 /* DestinationCollectionViewCell.m */; };
-		FD74EE351D35511A00B3D426 /* DestinationCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD74EE331D35511A00B3D426 /* DestinationCollectionViewCell.xib */; };
 		FD74EE3D1D35539400B3D426 /* YYFPSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = FD74EE3A1D35539400B3D426 /* YYFPSLabel.m */; };
 		FD74EE3E1D35539400B3D426 /* YYWeakProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = FD74EE3C1D35539400B3D426 /* YYWeakProxy.m */; };
 /* End PBXBuildFile section */
@@ -63,6 +69,19 @@
 /* Begin PBXFileReference section */
 		24BED5BC3B75FD275869088D /* Pods-CYJObjectiveC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CYJObjectiveC.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CYJObjectiveC/Pods-CYJObjectiveC.debug.xcconfig"; sourceTree = "<group>"; };
 		B44733251A707A412284F0E5 /* Pods-CYJObjectiveC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CYJObjectiveC.release.xcconfig"; path = "Pods/Target Support Files/Pods-CYJObjectiveC/Pods-CYJObjectiveC.release.xcconfig"; sourceTree = "<group>"; };
+		BC5B02821D35E14800960A04 /* DestinationCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DestinationCollectionViewCell.h; sourceTree = "<group>"; };
+		BC5B02831D35E14800960A04 /* DestinationCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DestinationCollectionViewCell.m; sourceTree = "<group>"; };
+		BC5B02841D35E14800960A04 /* DestinationCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DestinationCollectionViewCell.xib; sourceTree = "<group>"; };
+		BC5B02881D35E1CE00960A04 /* DestinationCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DestinationCollectionReusableView.h; sourceTree = "<group>"; };
+		BC5B02891D35E1CE00960A04 /* DestinationCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DestinationCollectionReusableView.m; sourceTree = "<group>"; };
+		BC5B028A1D35E1CE00960A04 /* DestinationCollectionReusableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DestinationCollectionReusableView.xib; sourceTree = "<group>"; };
+		BC5B06D01D36048600960A04 /* DetailCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailCollectionViewCell.h; sourceTree = "<group>"; };
+		BC5B06D11D36048600960A04 /* DetailCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailCollectionViewCell.m; sourceTree = "<group>"; };
+		BC5B06D21D36048600960A04 /* DetailCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailCollectionViewCell.xib; sourceTree = "<group>"; };
+		BC5B06D51D360B9500960A04 /* DetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailModel.h; sourceTree = "<group>"; };
+		BC5B06D61D360B9500960A04 /* DetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailModel.m; sourceTree = "<group>"; };
+		BC5B06D81D360BB500960A04 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		BC5B06D91D360BB500960A04 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		BCC4849B1D33240100C77AAE /* UIView+ZJFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ZJFrame.h"; sourceTree = "<group>"; };
 		BCC4849C1D33240100C77AAE /* UIView+ZJFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ZJFrame.m"; sourceTree = "<group>"; };
 		BCC4849D1D33240100C77AAE /* UIViewController+ZJScrollPageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+ZJScrollPageController.h"; sourceTree = "<group>"; };
@@ -123,9 +142,6 @@
 		FD74EE281D3550EA00B3D426 /* FeaturedCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeaturedCollectionViewCell.xib; sourceTree = "<group>"; };
 		FD74EE2C1D35511100B3D426 /* DestinationModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DestinationModel.h; sourceTree = "<group>"; };
 		FD74EE2D1D35511100B3D426 /* DestinationModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DestinationModel.m; sourceTree = "<group>"; };
-		FD74EE311D35511A00B3D426 /* DestinationCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DestinationCollectionViewCell.h; sourceTree = "<group>"; };
-		FD74EE321D35511A00B3D426 /* DestinationCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DestinationCollectionViewCell.m; sourceTree = "<group>"; };
-		FD74EE331D35511A00B3D426 /* DestinationCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DestinationCollectionViewCell.xib; sourceTree = "<group>"; };
 		FD74EE391D35539400B3D426 /* YYFPSLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYFPSLabel.h; sourceTree = "<group>"; };
 		FD74EE3A1D35539400B3D426 /* YYFPSLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYFPSLabel.m; sourceTree = "<group>"; };
 		FD74EE3B1D35539400B3D426 /* YYWeakProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYWeakProxy.h; sourceTree = "<group>"; };
@@ -164,6 +180,44 @@
 				EE87ADFA0129D71A7D155655 /* libPods-CYJObjectiveC.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BC5B02871D35E1A800960A04 /* DestinationCollectionReusableView */ = {
+			isa = PBXGroup;
+			children = (
+				BC5B02881D35E1CE00960A04 /* DestinationCollectionReusableView.h */,
+				BC5B02891D35E1CE00960A04 /* DestinationCollectionReusableView.m */,
+				BC5B028A1D35E1CE00960A04 /* DestinationCollectionReusableView.xib */,
+			);
+			path = DestinationCollectionReusableView;
+			sourceTree = "<group>";
+		};
+		BC5B06CD1D36045D00960A04 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				BC5B06D81D360BB500960A04 /* DetailViewController.h */,
+				BC5B06D91D360BB500960A04 /* DetailViewController.m */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		BC5B06CE1D36046400960A04 /* DetailModel */ = {
+			isa = PBXGroup;
+			children = (
+				BC5B06D51D360B9500960A04 /* DetailModel.h */,
+				BC5B06D61D360B9500960A04 /* DetailModel.m */,
+			);
+			path = DetailModel;
+			sourceTree = "<group>";
+		};
+		BC5B06CF1D36046C00960A04 /* DetailCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				BC5B06D01D36048600960A04 /* DetailCollectionViewCell.h */,
+				BC5B06D11D36048600960A04 /* DetailCollectionViewCell.m */,
+				BC5B06D21D36048600960A04 /* DetailCollectionViewCell.xib */,
+			);
+			path = DetailCollectionViewCell;
 			sourceTree = "<group>";
 		};
 		BCC4849A1D33240100C77AAE /* ZJScrollPageView */ = {
@@ -279,7 +333,7 @@
 		BCEC726D1D30B7E00081D1CE /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				FD74EE361D35512200B3D426 /* Particular */,
+				BC5B06CD1D36045D00960A04 /* Detail */,
 				BCEC72A11D30BB7C0081D1CE /* Destination */,
 			);
 			path = Controller;
@@ -288,8 +342,8 @@
 		BCEC726E1D30B7E00081D1CE /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BC5B06CE1D36046400960A04 /* DetailModel */,
 				FD74EE2B1D35511100B3D426 /* DestinationModel */,
-				FD74EE2E1D35511100B3D426 /* ParticularModel */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -297,6 +351,8 @@
 		BCEC726F1D30B7E00081D1CE /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BC5B06CF1D36046C00960A04 /* DetailCollectionViewCell */,
+				BC5B02871D35E1A800960A04 /* DestinationCollectionReusableView */,
 				FD74EE301D35511A00B3D426 /* DestinationCollectionViewCell */,
 			);
 			path = View;
@@ -574,28 +630,14 @@
 			path = DestinationModel;
 			sourceTree = "<group>";
 		};
-		FD74EE2E1D35511100B3D426 /* ParticularModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ParticularModel;
-			sourceTree = "<group>";
-		};
 		FD74EE301D35511A00B3D426 /* DestinationCollectionViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				FD74EE311D35511A00B3D426 /* DestinationCollectionViewCell.h */,
-				FD74EE321D35511A00B3D426 /* DestinationCollectionViewCell.m */,
-				FD74EE331D35511A00B3D426 /* DestinationCollectionViewCell.xib */,
+				BC5B02821D35E14800960A04 /* DestinationCollectionViewCell.h */,
+				BC5B02831D35E14800960A04 /* DestinationCollectionViewCell.m */,
+				BC5B02841D35E14800960A04 /* DestinationCollectionViewCell.xib */,
 			);
 			path = DestinationCollectionViewCell;
-			sourceTree = "<group>";
-		};
-		FD74EE361D35512200B3D426 /* Particular */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Particular;
 			sourceTree = "<group>";
 		};
 		FD74EE371D35538600B3D426 /* Test(测试) */ = {
@@ -724,8 +766,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD74EE2A1D3550EA00B3D426 /* FeaturedCollectionViewCell.xib in Resources */,
+				BC5B06D41D36048600960A04 /* DetailCollectionViewCell.xib in Resources */,
 				BCEC721F1D309C070081D1CE /* Assets.xcassets in Resources */,
-				FD74EE351D35511A00B3D426 /* DestinationCollectionViewCell.xib in Resources */,
+				BC5B028C1D35E1CE00960A04 /* DestinationCollectionReusableView.xib in Resources */,
+				BC5B02861D35E14800960A04 /* DestinationCollectionViewCell.xib in Resources */,
 				BCEC72D41D30E1FB0081D1CE /* LaunchScreen.storyboard in Resources */,
 				BCEC72891D30B81B0081D1CE /* LaunchViewController.xib in Resources */,
 			);
@@ -801,10 +845,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				BCEC72A81D30BF660081D1CE /* ToolboxViewController.m in Sources */,
+				BC5B02851D35E14800960A04 /* DestinationCollectionViewCell.m in Sources */,
 				BCC484AA1D33240100C77AAE /* UIView+ZJFrame.m in Sources */,
 				BCC486131D33C5C800C77AAE /* DestinationChildViewController.m in Sources */,
-				FD74EE341D35511A00B3D426 /* DestinationCollectionViewCell.m in Sources */,
 				BCEC72831D30B8090081D1CE /* TabBarViewController.m in Sources */,
+				BC5B06DA1D360BB500960A04 /* DetailViewController.m in Sources */,
 				BCEC72141D309C070081D1CE /* AppDelegate.m in Sources */,
 				FD74EE3D1D35539400B3D426 /* YYFPSLabel.m in Sources */,
 				BCC484AD1D33240100C77AAE /* ZJCustomLabel.m in Sources */,
@@ -814,6 +859,7 @@
 				BCC484AB1D33240100C77AAE /* UIViewController+ZJScrollPageController.m in Sources */,
 				BCC484AC1D33240100C77AAE /* ZJContentView.m in Sources */,
 				BCEC72B01D30BFAE0081D1CE /* OfflineViewController.m in Sources */,
+				BC5B028B1D35E1CE00960A04 /* DestinationCollectionReusableView.m in Sources */,
 				BCC484B01D33240100C77AAE /* ZJSegmentStyle.m in Sources */,
 				FD74EE241D3550E100B3D426 /* FeaturedModel.m in Sources */,
 				BCEC72881D30B81B0081D1CE /* LaunchViewController.m in Sources */,
@@ -822,8 +868,10 @@
 				BCC484AE1D33240100C77AAE /* ZJScrollPageView.m in Sources */,
 				FD74EE3E1D35539400B3D426 /* YYWeakProxy.m in Sources */,
 				BCEC72A01D30BB600081D1CE /* FeaturedViewController.m in Sources */,
+				BC5B06D31D36048600960A04 /* DetailCollectionViewCell.m in Sources */,
 				BCEC72111D309C070081D1CE /* main.m in Sources */,
 				FD74EE2F1D35511100B3D426 /* DestinationModel.m in Sources */,
+				BC5B06D71D360B9500960A04 /* DetailModel.m in Sources */,
 				BCEC72A41D30BB930081D1CE /* DestinationViewController.m in Sources */,
 				BCEC72AC1D30BF910081D1CE /* MyViewController.m in Sources */,
 			);
